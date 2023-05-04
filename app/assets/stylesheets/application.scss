@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ 
  */
 
 @import "bootstrap";
@@ -22,7 +23,19 @@ body{
   margin: 0;
   padding: 0;
 }
+.Coursereelsmenu{
+position:absolute;
+right:10%;
+top:50%;
+  margin: 3%;
 
+}
+.Createbutton{
+  margin-bottom: 3%;
+}
+.Uploadbutton{
+  margin-bottom: 3%;
+}
 .page-title{
   text-align: center;
   padding-top: 5rem;

@@ -1,0 +1,2 @@
+class CreateCourse < ApplicationRecord
+end

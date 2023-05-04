@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'create_courses/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -11,4 +12,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   root to: "home#index"
+  resources :create_courses
+  resources :reels
 end
