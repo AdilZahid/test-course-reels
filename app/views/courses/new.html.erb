@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <%= form_with(model: @create_course, local: true) do |form| %>
+      <%= form_with(model: @course, local: true) do |form| %>
         <div class="form-group">
           <%= form.label :title %>
           <%= form.text_field :title, class: "form-control", placeholder: "Enter title" %>
