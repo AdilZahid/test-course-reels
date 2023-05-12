@@ -5,15 +5,22 @@ ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
-
+gem "omniauth-rails_csrf_protection"
+gem 'rack-cors'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
+gem 'dotenv-rails', groups: [:development, :test]
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-
+gem "figaro"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
+# Use for google OAUTH
+gem 'omniauth'
+gem 'omniauth-google-oauth2', '~> 1.1', '>= 1.1.1'
+gem 'activerecord-session_store'
+gem 'google-api-client', '~> 0.53.0'
+gem 'googleauth'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -29,7 +36,6 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
-
 gem 'bootstrap', '~> 5.1.3'
 
 gem 'devise', '~> 4.9', '>= 4.9.2'

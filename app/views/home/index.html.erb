@@ -4,16 +4,23 @@
   <div class="coursereels-menu">
   <div class="create-button">
   
-  <%= link_to "Write & Create",new_course_path , class: "btn btn-lg btn-primary rounded-pill"  %>
+  <%= link_to "Write & Create", new_course_path, class: "btn btn-lg btn-primary rounded-pill" %>
   </div>
   <div class="Uploadbutton">
-  <%= link_to "Upload Video / Audio",  new_reel_path , class: "btn btn-lg btn-primary rounded-pill"  %>
+  <%= link_to "Upload Video / Audio", new_reel_path, class: "btn btn-lg btn-primary rounded-pill" %>
   </div>
   <div class="Recordbutton">
-  <%= link_to "Record Audio",root_path, class: "btn btn-lg btn-primary rounded-pill"  %>
+  <%= link_to "Record Audio", root_path, class: "btn btn-lg btn-primary rounded-pill" %>
+  </div>
+  </div>
+  <div class="Integrate Youtube Video">
+  <%= button_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: "false" } %>
+  </div>
+  <div class="Upload Youtube Video">
+  <%= link_to "Upload to Youtube", new_video_path, class: "btn btn-lg btn-primary rounded-pill" %>
   </div>
   </div>
 
 
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary rounded-pill"  %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary rounded-pill" %>
 </div>

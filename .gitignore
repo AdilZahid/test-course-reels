@@ -75,3 +75,6 @@
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
+
+# Ignore application configuration
+/config/application.yml
