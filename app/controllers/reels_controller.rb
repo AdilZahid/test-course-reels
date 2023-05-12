@@ -5,7 +5,7 @@ class ReelsController < ApplicationController
 
   def create
     @reel = Reel.new(reel_params)
-    binding.pry
+
     if @reel.save
       redirect_to @reel
     else
