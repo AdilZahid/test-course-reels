@@ -16,8 +16,8 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     youtube_service = YoutubeService.new
     if @video.save
-      youtube_service.upload_video_to_youtube(@video,current_user)
-      redirect_to @video, notice: "Video was successfully uploaded."
+      youtube_service.upload_video_to_youtube(@video, current_user)
+      redirect_to root_path, notice: "Video was successfully uploaded."
     else
       render :new
     end
