@@ -19,7 +19,7 @@ class YoutubeService
         privacy_status: "private",
       },
     )
-    binding.pry
+ 
     video_file_path = "vecteezy_video-countdown-counter-with-rounded-corners-for-10-to-1-on_5965601_897.mp4"
     # video_file_url = "localhost:3000/"+Rails.application.routes.url_helpers.rails_blob_url(videos.video_file, only_path: true)
 
