@@ -9,6 +9,7 @@ class YoutubeService
     client = Google::Apis::YoutubeV3::YouTubeService.new
     client.authorization = user.youtube_token
     # Create new video object
+
     video = Google::Apis::YoutubeV3::Video.new(
       snippet: {
         title: videos.title,
@@ -16,7 +17,7 @@ class YoutubeService
         tags: ["tag1", "tag2"],
       },
       status: {
-        privacy_status: "private",
+        privacy_status: videos.privacy_status,
       },
     )
 
