@@ -14,10 +14,7 @@
   </div>
   </div>
   <div class="Integrate Youtube Video">
-  <%= button_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: "false" } %>
-  </div>
-  <div class="Upload Youtube Video">
-  <%= link_to "Upload to Youtube", new_video_path, class: "btn btn-lg btn-primary rounded-pill" %>
+  <%= button_to "Upload to Youtube", user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: "false" }, class: "btn btn-lg btn-primary rounded-pill" %>
   </div>
   </div>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary rounded-pill" %>
