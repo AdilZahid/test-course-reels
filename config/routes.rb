@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'integrations/index'
   root to: "home#index"
   resources :courses
   resources :reels
