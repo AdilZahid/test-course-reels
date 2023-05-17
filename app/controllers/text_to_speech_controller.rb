@@ -1,5 +1,6 @@
 class TextToSpeechController < ApplicationController
   before_action :load_data
+
   def index
   end
 
@@ -14,6 +15,7 @@ class TextToSpeechController < ApplicationController
   end
 
   private
+
   def load_data
     response = HTTParty.get("https://api.elevenlabs.io/v1/voices")
     @voices = response.parsed_response["voices"]

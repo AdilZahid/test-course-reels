@@ -37,8 +37,10 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'],{scope: "userinfo.email, youtube"} 
-# #Rails.application.config.middleware.use OmniAuth::Builder do
+  client_id = Rails.application.credentials[:google][:client_id]
+  client_secret = Rails.application.credentials[:google][:client_secret]
+  config.omniauth :google_oauth2, client_id, client_secret, { scope: "userinfo.email, youtube" }
+  # #Rails.application.config.middleware.use OmniAuth::Builder do
 # provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {scope: "userinfo.email, youtube"}
 # end
   # ==> Configuration for any authentication mechanism
