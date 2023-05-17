@@ -1,29 +1,21 @@
-<div class="video-background">
-  <video autoplay muted loop>
-    <source src="https://reeelapps-app.s3.us-west-2.amazonaws.com/content_reel_bg+-video-2+(720p).mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="content">
-    <%= link_to "Write & Create", new_course_path, class: 'btn btn-lg text-light border modal_buttons'%>
-    <%= link_to "Upload Video / Audio", new_reel_path, class: 'btn btn-lg text-light border project_view modal_buttons' %>
-    <%= link_to "Record Audio", videos_path,class: 'btn btn-lg text-light border integration-button modal_buttons' %>
+<div class="d-flex flex-column justify-content-center align-items-center pt-5">
+  <h1 class="">Reels</h1>
+  <h3>Welcome to the Course Reels</h3>
+  <div class="coursereels-menu">
+  <div class="create-button">
+  
+  <%= link_to "Write & Create", new_course_path, class: "btn btn-lg btn-primary rounded-pill" %>
   </div>
-  <div class="container px-5 py-5 px-md-5 text-center text-lg-start my-5">
-    <div class="row gx-lg-5 align-items-center mb-5">
-      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-        <h1 class="my-2 display-5 fw-bold ls-tight text-center homepage_heading">
-          WELCOME TO <span class="homepage_heading_span">CONTENTREEL</span>
-        </h1>
-        <p class="mb-4 text-center homepage_demo">
-          Instantly create impactful and engaging content videos for your YouTube channel, TikTok,
-          Instagram Reels and everything in between.
-          Create all shapes and sizes of videos and publish them everyday, dominating niche.
-        </p>
-        <button class="btn rounded-pill btn-lg btn-block social_connect_button">Watch Demo Videos</button>
-      </div>
-    </div>
+  <div class="Uploadbutton">
+  <%= link_to "Upload Video / Audio", new_reel_path, class: "btn btn-lg btn-primary rounded-pill" %>
   </div>
+  <div class="Recordbutton">
+  <%= link_to "Record Audio", videos_path, class: "btn btn-lg btn-primary rounded-pill" %>
+  </div>
+  </div>
+  <div class="Integrate Youtube Video">
+  <%= button_to "Upload to Youtube", user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: "false" }, class: "btn btn-lg btn-primary rounded-pill" %>
+  </div>
+  </div>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary rounded-pill" %>
 </div>
-<!-- Page Content -->
-
-

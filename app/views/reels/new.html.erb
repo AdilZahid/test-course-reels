@@ -1,1 +1,10 @@
-<%= render 'reels/form', reel: @reel %>>
+<h1>New Reel</h1>
+
+<%= form_with model: @reel, url: reels_path, local: true do |form| %>
+
+  <%= form.label :file %>
+  <%= form.file_field :file %>
+<div>
+  <%= form.submit %>
+</div>
+  <% end %>
