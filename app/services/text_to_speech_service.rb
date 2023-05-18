@@ -1,6 +1,6 @@
 # app/services/text_to_speech_service.rb
 require 'httparty'
-
+TEXT_API_KEY = Rails.application.credentials[:text_api_key]
 class TextToSpeechService
   def initialize(text, voice_type)
     @text = text
@@ -11,7 +11,7 @@ class TextToSpeechService
     endpoint = "https://api.elevenlabs.io/v1/text-to-speech/#{@voice_type}"
     headers = {
       'Content-Type' => 'application/json',
-      'xi-api-key' => ENV['TEXT_API_KEY']
+      'xi-api-key' => TEXT_API_KEY
     }
     accept = 'audio/mp3'
     body = {
