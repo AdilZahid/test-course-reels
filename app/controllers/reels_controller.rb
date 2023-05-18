@@ -1,13 +1,16 @@
 class ReelsController < ApplicationController
+  def index
+    @reels = Reel.all
+  end
+
   def new
     @reel = Reel.new
   end
 
   def create
     @reel = Reel.new(reel_params)
-
     if @reel.save
-      redirect_to @reel
+      redirect_to reels_path
     else
       render "new"
     end

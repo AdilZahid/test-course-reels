@@ -36,35 +36,43 @@
 }
 
 .bg-glass {
-    background: rgba(0, 0, 0, .6) !important;
+    background: rgba(0,0,0,.6) !important;
     backdrop-filter: saturate(200%) blur(25px);
 }
-
-.social_connect_button {
+.social_connect_button
+{
     height: 50px;
     width: 100%;
     background: radial-gradient(#44008b, #ad1cff);
     float: left;
-    border: 0px;
+    border:0px;
     margin-bottom: 20px;
-    color: white;
+    color:white ;
     box-shadow: 0 0 1px #ccc;
     -webkit-transition-duration: 0.3s;
     -webkit-transition-timing-function: linear;
-    box-shadow: 0px 0 0 #31708f inset;
+    box-shadow:0px 0 0 #31708f  inset;
 }
 
-.social_connect_button:hover {
-    box-shadow: 500px 0 0 white inset;
+.social_connect_button:hover{
+    box-shadow:500px 0 0 white inset;
     text-decoration-color: #c16bed;
 }
-
-.forgot-link {
+.forgot-link
+{
     color: #e1a6ff;
     padding-left: 30%;
 }
 
-.login_form_style {
+
+.login_form_style{
     color: white;
-    float: left
+    float: left;
+    padding-top: 10px;
+}
+.login_form_style_email{
+    color: white;
+    float: left;
+    padding-top: 10px;
+    margin-right: 250px;
 }
