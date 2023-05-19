@@ -7,10 +7,15 @@
     <% @reels.each do |reel| %>
       <div class="col-md-4">
         <div class="card mb-4">
+          <%debugger %>
           <% if reel.file.attached? %>
-            <video controls class="card-img-top">
-              <source src="<%= url_for(reel.file) %>" type="<%= reel.file.content_type %>">
-            </video>
+            <% if File.extname(reel.file.filename.to_s).downcase =="jpg" %>
+              <%= image_tag reel.file %>
+            <% elsif File.extname(reel.file.filename.to_s).downcase =="mp4" %>
+              <%= video_tag reel.file%>
+            <% else %>
+              <p>This file type is not supported.</p>
+            <% end %>
           <% else %>
             <div class="card-body">
               <p class="card-text">No video file attached.</p>
