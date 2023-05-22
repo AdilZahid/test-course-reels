@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root to: "home#index"
-  resources :courses
+  resources :courses do
+    member do
+      get "script", to: "courses#script"
+      get "editor", to: "courses#editor"
+    end
+
+  end
+
   resources :reels
   resources :videos, only: [:new, :create, :index]
   get "text_to_speech", to: "text_to_speech#text_to_speech"

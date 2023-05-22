@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_course, only: %i[ show edit update destroy ]
+  before_action :set_course, only: %i[ show edit update destroy editor script]
 
   def index
     @courses = Course.all
@@ -33,6 +33,13 @@ class CoursesController < ApplicationController
         format.json { head :no_content }
       end
     end
+  end
+
+  def script
+  end
+
+  def editor
+    @reels=Reel.all
   end
 
   private

@@ -14,11 +14,12 @@
           <div class="product-details">
             <%= course.title %>
             <br/>
-            <%= link_to "Edit", course_path(course), class: 'btn btn-dark' %>
+            <%= link_to "Edit", editor_course_path(course), class: 'btn btn-dark' %>
             <%= link_to "Delete", course, data: { turbo_method: :delete, turbo_confirm: :"Are you sure" }, class: 'btn btn-danger' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>
