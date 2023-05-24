@@ -1,14 +1,11 @@
 class TemplatesController < ApplicationController
-
   def index
-
   end
-  def new
 
+  def new
     @course = Course.find_by(id: params[:course_id])
 
     @template = @course.templates.new
-
   end
 
   def create
@@ -20,8 +17,10 @@ class TemplatesController < ApplicationController
       render "new"
     end
   end
+
   private
+
   def template_params
-    params.require(:template).permit(:file,:course_id)
+    params.require(:template).permit(:file, :course_id)
   end
 end
