@@ -22,4 +22,13 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "/users/sign_out" => "devise/sessions#destroy"
   end
+  resources :users do
+    resources :courses do
+      member do
+        get "script", to: "courses#script"
+        get "editor", to: "courses#editor"
+      end
+      resources :templates
+    end
+  end
 end

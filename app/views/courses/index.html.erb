@@ -2,8 +2,9 @@
 
 <div class="container position-relative project-listing">
   <div class="row">
+
     <% @courses.each do |course| %>
-     <%= render partial: "courses/course",locals: {course: course} %>
+      <%= render partial: "courses/course", locals: { course: course } %>
     <% end %>
   </div>
 

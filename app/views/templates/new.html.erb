@@ -1,9 +1,9 @@
-<%= form_for(reel) do |form| %>
-  <% if reel.errors.any? %>
+<%= form_for @template, url: user_course_templates_path, html: { multipart: true } do |form| %>
+  <% if @template.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(reel.errors.count, "error") %> prohibited this Reel from being saved:</h2>
+      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this Reel from being saved:</h2>
       <ul>
-        <% reel.errors.each do |error| %>
+        <% @template.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -21,8 +21,7 @@
               <%= form.label :file %>
               <%= form.file_field :file, class: "form-control", placeholder: "Upload Video" %>
             </div>
-            <%debugger %>
-            <%#= form.hidden_field :course_id,value: @course.id %>
+            <%#= form.hidden_field :course_id,value: template.course_id %>
             <br>
             <div>
               <%= form.submit "Create", class: "btn btn-sm modal_buttons text-light border" %>

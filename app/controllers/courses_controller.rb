@@ -7,11 +7,11 @@ class CoursesController < ApplicationController
   end
 
   def new
-    @course = Course.new
+    @course = current_user.courses.new
   end
 
   def create
-    @course = Course.new(course_params)
+    @course = current_user.courses.new(course_params)
     respond_to do |format|
       if @course.save
         format.html { redirect_to courses_url, notice: "Project was successfully created." }
@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
   end
 
   def editor
-    @reels = Reel.all
+    @templates=Template.all
   end
 
   private

@@ -41,13 +41,13 @@
   <div class="container">
     <h1>Video Listing</h1>
     <div class="row">
-      <% @reels.each do |reel| %>
-        <%= render partial: "courses/reel", locals: { reel: reel } %>
+      <% @templates.each do |template| %>
+        <%= render partial: "courses/template", locals: { template: template } %>
       <% end %>
     </div>
   </div>
 
 </div>
 <div class="editor2 w-25 mt-5">
-  <%= link_to "Upload Video / Audio", new_reel_path(id: @course.id), class: 'btn btn-secondary modal_buttons1' %>
+  <%= link_to "Upload Video / Audio", new_user_course_template_path(course_id: params[:id], user_id: current_user.id), class: 'btn btn-secondary modal_buttons1' %>
 </div>
