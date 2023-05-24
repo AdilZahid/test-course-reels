@@ -5,12 +5,12 @@ class ReelsController < ApplicationController
 
   def new
     @reel = Reel.new
-    @course=Course.find_by(id: params[:id])
-    session[:id]=@course.id
+    @course = Course.find_by(id: params[:id])
+    session[:id] = @course.id
   end
 
   def create
-    id=session[:id]
+    id = session[:id]
     @reel = Reel.new(reel_params)
     if @reel.save
       redirect_to editor_course_url(id: id)

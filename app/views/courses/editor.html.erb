@@ -33,11 +33,11 @@
       </div>
     </div>
   </nav>
-<!--    <iframe width="560" height="315" src="<%#= url_for(selected.file) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-      <img src="https://ichef.bbci.co.uk/images/ic/640x360/p05ccrb2.jpg" width="100%" height="86%">
+  <!--    <iframe width="560" height="315" src="<%#= url_for(selected.file) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+  <img src="https://ichef.bbci.co.uk/images/ic/640x360/p05ccrb2.jpg" width="100%" height="86%">
 
 </div>
-<div class="editor1 bg-dark w-25 h-50">
+<div class="editor1 bg-dark w-25 ">
   <div class="container">
     <h1>Video Listing</h1>
     <div class="row">
@@ -49,7 +49,6 @@
               <source src="<%= url_for(reel.file) %>" type="<%= reel.file.content_type %>">
             </video>
           </div>
-
         </div>
       <% end %>
     </div>

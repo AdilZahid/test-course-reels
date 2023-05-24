@@ -3,8 +3,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy editor script]
 
   def index
-    @courses = Course.all
-    @courses = @courses.reverse
+    @courses = Course.all.order("created_at DESC")
   end
 
   def new
@@ -39,7 +38,7 @@ class CoursesController < ApplicationController
   end
 
   def editor
-    @reels=Reel.all
+    @reels = Reel.all
   end
 
   private
