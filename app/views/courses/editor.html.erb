@@ -42,19 +42,11 @@
     <h1>Video Listing</h1>
     <div class="row">
       <% @reels.each do |reel| %>
-        <% selected = reel %>
-        <div class="col-md-6">
-          <div class="card mb-3">
-            <video controls class="card-img-top" width="60%">
-              <source src="<%= url_for(reel.file) %>" type="<%= reel.file.content_type %>">
-            </video>
-          </div>
-        </div>
+        <%= render partial: "courses/reel", locals: { reel: reel } %>
       <% end %>
     </div>
   </div>
-  <%#debugger %>
-  <%#= link_to "Upload Video / Audio", new_reel_path, class: 'btn btn-' %>
+
 </div>
 <div class="editor2 w-25 mt-5">
   <%= link_to "Upload Video / Audio", new_reel_path(id: @course.id), class: 'btn btn-secondary modal_buttons1' %>

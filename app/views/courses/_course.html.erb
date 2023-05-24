@@ -1,0 +1,15 @@
+<div class="col-sm-3">
+  <div class="card">
+
+    <div class="image-container ">
+      <img src="https://course.reelapps.io/static/media/LOGO.fdf108e58daf4a83417e.png" width="100%" height="100%" class="img-fluid rounded thumbnail-image background-radial-gradient">
+    </div>
+
+    <div class="product-details">
+      <%= course.title %>
+      <br/>
+      <%= link_to "Edit", editor_course_path(course), class: 'btn btn-dark' %>
+      <%= link_to "Delete", course, data: { turbo_method: :delete, turbo_confirm: :"Are you sure" }, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

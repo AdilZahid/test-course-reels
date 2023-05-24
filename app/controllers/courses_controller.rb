@@ -1,9 +1,9 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_course, only: %i[ show edit update destroy editor script]
+  before_action :set_course, :except => [:index, :new, :create]
 
   def index
-    @courses = Course.all.order("created_at DESC")
+    @courses = Course.order("created_at DESC")
   end
 
   def new
@@ -22,7 +22,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find(params[:id])
   end
 
   def destroy
