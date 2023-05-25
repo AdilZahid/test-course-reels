@@ -23,7 +23,8 @@ gem 'google-api-client', '~> 0.53.0'
 gem 'googleauth'
 gem "omniauth-facebook", "~> 8.0"
 gem "httparty"
-
+gem 'delayed_job', '~> 4.1', '>= 4.1.2'
+gem 'delayed_job_active_record'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
