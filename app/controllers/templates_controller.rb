@@ -8,8 +8,8 @@ class TemplatesController < ApplicationController
   end
 
   def create
-    @Template = @course.templates.new(template_params)
-    if @Template.save
+    @template = @course.templates.new(template_params)
+    if @template.save
       redirect_to editor_course_url(id: @course.id)
     else
       render "new"
