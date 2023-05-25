@@ -1,11 +1,8 @@
 <%= link_to 'Create Course', new_course_path, class: 'btn btn-lg project_view1 modal_buttons border border-3 border-dark project-modal' %>
-
 <div class="container position-relative project-listing">
   <div class="row">
-
     <% @courses.each do |course| %>
       <%= render partial: "courses/course", locals: { course: course } %>
     <% end %>
   </div>
-
 </div>

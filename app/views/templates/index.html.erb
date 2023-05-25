@@ -2,23 +2,5 @@
 
 <div class="container">
   <h1>All Video Files</h1>
-
-  <div class="row">
-    <% @templates.each do |template| %>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <% if template.file.attached? %>
-            <video controls class="card-img-top">
-              <source src="<%= url_for(template.file) %>" type="<%= template.file.content_type %>">
-            </video>
-          <% else %>
-            <div class="card-body">
-              <p class="card-text">No video file attached.</p>
-            </div>
-          <% end %>
-
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render partial: "templates/template", locals: { templates: @templates } %>
 </div>

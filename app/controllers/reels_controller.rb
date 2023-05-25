@@ -5,13 +5,12 @@ class ReelsController < ApplicationController
 
   def new
     @reel = Reel.new
-    @course = Course.find_by(id: params[:id])
   end
 
   def create
     @reel = Reel.new(reel_params)
     if @reel.save
-      redirect_to editor_course_url(id: @reel.course_id)
+      redirect_to reels_path
     else
       render "new"
     end
