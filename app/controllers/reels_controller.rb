@@ -17,6 +17,6 @@ class ReelsController < ApplicationController
   end
 
   def reel_params
-    params.require(:reel).permit(:file)
+    params.require(:reel).permit(:file, :course_id)
   end
 end

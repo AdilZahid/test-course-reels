@@ -19,7 +19,7 @@ class VideosController < ApplicationController
       file_path = Rails.root.join("public", "video", "test.mp4")
       File.open(file_path, "wb") do |file|
         file.write(@video.video_file.download)
-        end
+      end
       youtube_service.upload_video_to_youtube(@video, current_user)
       redirect_to videos_path, notice: "Video was successfully uploaded."
     else

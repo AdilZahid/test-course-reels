@@ -12,9 +12,11 @@
 </head>
 
 <body>
-<%= render 'layouts/navbar' %>
+<% if current_user.present? %>
+  <%= render 'layouts/navbar' %>
+<% end %>
 <%= yield %>
 <%= render partial: "shared/flash_messages" %>
-<%= render 'layouts/footer' %>
+<%#= render 'layouts/footer' %>
 </body>
 </html>
