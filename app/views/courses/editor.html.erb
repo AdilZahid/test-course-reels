@@ -41,9 +41,7 @@
   <div class="container">
     <h1>Video Listing</h1>
     <div class="row">
-      <% @templates.each do |template| %>
-        <%= render partial: "courses/template", locals: { template: template } %>
-      <% end %>
+        <%= render partial: "courses/template", collection: @templates %>
     </div>
   </div>
 
