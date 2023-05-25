@@ -2,16 +2,16 @@
   <div class="card mb-3">
     <% if template.file.attached? %>
       <% if template.file.content_type.include?("video") %>
-          <video controls class="card-img-top" width="60%">
-            <source src="<%= url_for(template.file) %>" type="<%= template.file.content_type %>">
-          </video>
-        <%elsif template.file.content_type.include?("audio")%>
+        <video controls class="card-img-top" width="60%">
+          <source src="<%= url_for(template.file) %>" type="<%= template.file.content_type %>">
+        </video>
+      <% elsif template.file.content_type.include?("audio") %>
         <audio controls class="card-img-top" width="60%">
           <source src="<%= url_for(template.file) %>" type="<%= template.file.content_type %>">
         </audio>
-      <%else %>
-       <%= image_tag url_for(template.file) %>
-      <%end %>
-      <%end %>
+      <% else %>
+        <%= image_tag url_for(template.file) %>
+      <% end %>
+    <% end %>
   </div>
 </div>
