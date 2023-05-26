@@ -1,2 +1,11 @@
 module IntegrationsHelper
+  def categorize_data
+    @data.group_by{ |item| item["type"] }.transform_values{ |items| items.map { |item| [item["name"], "#{item["id"]},#{item["type"]}"]}}
+  end
+
+  def fb_status
+   @status == 'connected'
+  end
+
+
 end
