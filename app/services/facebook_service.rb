@@ -67,16 +67,5 @@ class FacebookService
 
     HTTParty.post(url, query: query_params)
   end
-
-  # def get_token
-  #
-  #   token_url = "https://graph.facebook.com/v16.0/oauth/access_token"
-  #   response = HTTParty.get(token_url, query: {
-  #     client_id: APP_ID,
-  #     redirect_uri: "#{URL}/auth/facebook/callback",
-  #     client_secret: APP_SECRET,
-  #     code: @code,
-  #   })
-  #   response["access_token"]
-  # end
+  
 end
