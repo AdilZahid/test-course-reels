@@ -5,45 +5,30 @@ class IntegrationsController < ApplicationController
   def index
 
     if check_session
-      @status = "connected"
+      connected
     end
-  end
 
-  def create
-    if check_session
-      redirect_to auth_facebook_callback_path
-    else
-      login_url = FacebookService.login
-      redirect_to login_url, allow_other_host: true
-    end
   end
 
   def facebook_callback
-    fetch_data = FacebookService.new({code: params[:code], token: session[:token]})
-    if check_session
-      token = session[:token]
-    else
-      token = fetch_data.get_token
-      session[:token] = token
-    end
-    @data = fetch_data.facebook_call(token)
+    fb_token = current_user.facebook_token
+    fetch_data = FacebookService.new({token: fb_token})
+    @data = fetch_data.facebook_call(fb_token)
   end
 
 
   def post_content
-    post_data = FacebookService.new({id: params[:id], token: session[:token]})
+    post_data = FacebookService.new({id: params[:id], token: current_user.facebook_token})
     selected_value = params[:id].split(',')
     type = selected_value[1]
-    if type == 'GROUPS'
-      post_data.delay.publish_video_on_group
-    elsif type == 'PAGES'
-      post_data.delay.publish_video_on_page
-    end
+    type == 'GROUPS' ? post_data.delay.publish_video_on_group : post_data.delay.publish_video_on_page
     redirect_to integrations_path, notice: 'Video Uploaded successfully.'
   end
 
   def destroy_session
-    session[:token] = nil
+    current_user.facebook_token = nil
+    current_user.save
+    disconnected
     redirect_to integrations_path
   end
 

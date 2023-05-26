@@ -11,7 +11,16 @@ module Integration
       modified_array << api_data
     end
   end
+
   def check_session
-    session[:token].present?
+    current_user.facebook_token.present?
+  end
+
+  def connected
+    @status = "connected"
+  end
+
+  def disconnected
+    @status = "disconnected"
   end
 end
